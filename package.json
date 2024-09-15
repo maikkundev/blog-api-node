@@ -1,0 +1,17 @@
+{
+  "name": "blog-api-node",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "generate": "prisma generate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.2",
+    "@prisma/client": "^5.19.1",
+    "hono": "^4.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.5",
+    "prisma": "^5.19.1",
+    "tsx": "^4.7.1"
+  }
+}
