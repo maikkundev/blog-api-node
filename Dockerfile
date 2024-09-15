@@ -10,5 +10,5 @@ COPY . .
 RUN pnpm install
 
 # execute node app
-CMD [ "pnpm", "dev" ]
 EXPOSE 3000
+ENTRYPOINT [ "pnpm", "dev" ]
