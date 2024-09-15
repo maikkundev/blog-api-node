@@ -1,14 +1,11 @@
-FROM node:20-alpine
+FROM node:lts-alpine
 
-WORKDIR /app
-
-# install pnpm
+WORKDIR /api
 RUN npm i -g pnpm
 
-# copy files and install dependencies
+COPY package.json ./
+RUN pnpm i
 COPY . .
-RUN pnpm install
+RUN pnpm prisma generate
 
-# execute node app
-EXPOSE 3000
-ENTRYPOINT [ "pnpm", "dev" ]
+CMD ["pnpm", "dev"]
