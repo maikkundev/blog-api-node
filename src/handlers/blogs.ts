@@ -24,7 +24,7 @@ blogs.get("/:id", async (c) => {
   );
 });
 
-blogs.post("/new/c", async (c) => {
+blogs.post("/new", async (c) => {
   const data: CreateOptions = await c.req.json();
 
   await prisma.blog.create({
