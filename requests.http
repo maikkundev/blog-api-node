@@ -1,0 +1,17 @@
+### GET all blogs
+GET localhost:3000/blogs
+
+### GET specific blog with id
+GET localhost:3000/blogs/1
+
+### POST (create) a new blog
+POST localhost:3000/blogs/new/c
+Content-Type: application/json
+
+{
+  "author": "Michael",
+  "details": "A blog..."
+}
+
+### DELETE a post
+DELETE localhost:3000/blogs/1
