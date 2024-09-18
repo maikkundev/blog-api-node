@@ -42,7 +42,7 @@ blogs.delete("/:id", async (c) => {
     where: { id },
   });
 
-  return c.body(`Blog with id ${id} was deleted.`);
+  return c.body(`Blog with id ${ id } was deleted.`);
 });
 
 export default blogs;
