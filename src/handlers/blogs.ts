@@ -45,4 +45,21 @@ blogs.delete("/:id", async (c) => {
   return c.body(`Blog with id ${ id } was deleted.`);
 });
 
+blogs.patch("/:id", async (c) => {
+  const idStr = c.req.param();
+  const id = parseInt(idStr.id);
+
+  const data: CreateOptions = await c.req.json();
+
+  await prisma.blog.update({
+    where: { id },
+    data: {
+      author: data.author,
+      details: data.details,
+    }
+  })
+
+  return c.body(`Blog with id ${ id } was updated.`);
+})
+
 export default blogs;
